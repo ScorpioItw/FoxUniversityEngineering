@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狐尼克起始页</title>
+    <link rel='icon' href='img/logo.ico'>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mod.css">
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/note.css">
+</head>
+
+<body>
+    <audio class="media" preload="auto" src="./media/回收.ogg" type="audio/ogg"></audio>
+    <div class="base" id="base">
+        <div class="bg loading"><img class="img"></div>
+        <div class="body">
+            <div class="tipsBox">
+                <div class="tips">
+                    <div class="tipsLogo">
+                        <!-- 提示词logo -->
+                        <svg width="100%" height="100%" viewBox="0 0 200 200">
+                            <!-- circle 绘制圆   fill 填充颜色   stroke 边框颜色     stroke-width 边框宽度   cx 圆心x   r为圆半径 -->
+                            <circle fill="none" stroke="#68e534" stroke-width="10" cx="100" cy="100" r="90"
+                                stroke-linecap="round" class="circle">
+                            </circle>
+                            <!-- polyline 绘制路径   points 端点     stroke-linecap 顶端圆角     stroke-linejoin 连接处圆角 -->
+                            <polyline fill="none" stroke="#68e534" stroke-width="14" points="55,87 95,124 145,75"
+                                stroke-linecap="round" stroke-linejoin="round" class="tick">
+                            </polyline>
+                        </svg>
+                        <svg width="100%" height="100%" viewBox="0 0 200 200">
+                            <circle fill="none" stroke="#ff5252" stroke-width="10" cx="100" cy="100" r="90"
+                                stroke-linecap="round" class="circle">
+                            </circle>
+                            <polyline fill="none" stroke="#ff5252" stroke-width="14" points="60,65 145,140"
+                                stroke-linecap="round" class="error-f">
+                            </polyline>
+                            <polyline fill="none" stroke="#ff5252" stroke-width="14" points="60,140 145,65"
+                                stroke-linecap="round" class="error-s">
+                            </polyline>
+                        </svg>
+                        <svg width="100%" height="100%" viewBox="0 0 200 200">
+                            <circle fill="none" stroke="#ffdd59" stroke-width="10" cx="100" cy="100" r="90"
+                                stroke-linecap="round" class="circle">
+                            </circle>
+                            <polyline fill="none" stroke="#ffdd59" stroke-width="14" points="101,59 101,111"
+                                stroke-linecap="round">
+                            </polyline>
+                            <circle fill="#ffdd59" stroke-width="10" cx="101" cy="150" r="10" class="point"></circle>
+                        </svg>
+                        <svg width="100%" height="100%" viewBox="0 0 200 200">
+                            <circle fill="none" stroke="#0fbcf9" stroke-width="10" cx="100" cy="100" r="90"
+                                stroke-linecap="round" class="circle">
+                            </circle>
+                            <circle fill="#0fbcf9" stroke-width="10" cx="101" cy="59" r="10" class="point"></circle>
+                            <polyline fill="none" stroke="#0fbcf9" stroke-width="14" points="101,98 101,150"
+                                stroke-linecap="round">
+                            </polyline>
+                        </svg>
+                    </div>
+                    <div class="tipsText">提示词部分</div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="time">
+                    <!-- 时间组件 -->
+                    <div class="timeText">00:00</div>
+                </div>
+                <div class="search_bar">
+                    <!-- 搜索盒子 -->
+                    <input placeholder="Search" onkeypress="getKey()">
+                    <div class="search_logo">
+                        <!-- 搜索logo -->
+                        <svg viewBox="0 0 1035 1024" width="100%" height="100%">
+                            <path
+                                d="M1013.852766 1011.332492a42.225028 42.225028 0 0 1-59.70619 0L702.316509 759.502424a428.900723 428.900723 0 1 1 133.958901-196.00858 41.718328 41.718328 0 0 1-4.919216 14.166497c-1.330088 3.61024-2.385714 7.347155-3.800252 10.91517l-2.385714-2.385714a42.225028 42.225028 0 0 1-72.690386-29.13527l-0.380025-3.905815a41.950565 41.950565 0 0 1 11.379645-28.670794l-3.926928-3.905815a336.976836 336.976836 0 1 0-88.123633 150.764463 6.333754 6.333754 0 0 0 0.612262-0.928951l61.120729 1.055626 145.254096 145.232984 0.274463-0.274463 135.12009 135.12009a42.225028 42.225028 0 0 1 0.042225 59.79064z"
+                                fill="var(--bg-color)" p-id="4295">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="text">
+                    <!-- 美文部分 -->
+                    <div class="text-style"><span></span></div>
+                    <!-- 美文点击效果 -->
+                    <div class="text-options">
+                        <!-- 美文功能按钮 -->
+                        <svg class="icon" viewBox="0 0 1024 1024" width="100%" height="100%">
+                            <path d="M288 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="var(--bg-color)"></path>
+                            <path d="M512 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="var(--bg-color)"></path>
+                            <path d="M736 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="var(--bg-color)"></path>
+                        </svg>
+                    </div>
+                    <div class="text-options-box">
+                        <!-- 美文功能盒子 -->
+                        <ul>
+                            <li class="copy">复制</li>
+                            <li class="sou">搜索</li>
+                        </ul>
+                    </div>
+                    <li class="text-p">「 最是人间留不住，朱颜辞镜花辞树。 」</li>
+                    <li class="text-name">—— 王国维</li>
+                </div>
+            </div>
+            <div class="mod">
+                <div class="time">
+                    <!-- 时间组件 -->
+                    <div class="timeText TimeText">00:00</div>
+                </div>
+                <div class="mod-function">
+                    <div class="mod-date"><img src="./image/data.svg">
+                        <p>日历</p>
+                    </div>
+                    <div class="mod-div"><img src="./image/map1.svg">
+                        <p>地图</p>
+                    </div>
+                    <div class="mod-div"><img src="./image/image.svg">
+                        <p>壁纸</p>
+                    </div>
+                    <div class="mod-div"><img src="./image/yun2.svg">
+                        <p>云盘</p>
+                    </div>
+                    <div class="mod-div"><a href="https://mail.qq.com"><img src="./image/mail1.svg"></a>
+                        <p>邮件</p>
+                    </div>
+                    <div class="mod-div"><a href="https://www.bilibili.com"><img src="./image/video.svg"></a>
+                        <p>视频</p>
+                    </div>
+                    <div class="mod-div"><img src="./image/ex.svg">
+                        <p>说明</p>
+                    </div>
+                    <div class="mod-note"><img src="./image/note.svg">
+                        <p>便签</p>
+                    </div>
+                    <div class="mod-div"><img src="./image/weather.svg">
+                        <p>天气</p>
+                    </div>
+                    <div class="mod-div"><img src="./image/new.svg">
+                        <p>资讯</p>
+                    </div>
+                    <div class="music"><img src="./image/music.svg">
+                        <p>音乐</p>
+                    </div>
+                    <div class="mod-div add"><img src="./image/add.svg">
+                        <p>添加</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 音乐部分 -->
+            <div class="musicShell">
+                <div class="music-close"></div>
+                <!-- 播放器封面部分 -->
+                <div class="cover">
+                    <div class="img-style"></div>
+                    <!-- 胶片 -->
+                    <div class="record"></div>
+                    <img class="song-cover" src="./music-img/cover.jpg">
+                </div>
+                <div class="info">
+                    <div class="song-name"></div>
+                    <div class="singer"></div>
+                </div>
+                <!-- 音量控制 -->
+                <div class="vol-box">
+                    <span class="vol-down"><img src="./music-img/down.png"></span>
+                    <input type="range" class="vol-range" step="1" value="80" min="0" max="100">
+                    <span class="vol-up"><img src="./music-img/up.png"></span>
+                </div>
+
+                <div class="btn-box">
+                    <div class="repeat"><img class="repeat-img" src="./music-img/circulstion.png"></div>
+                    <div class="love"><img class="love-img" src="./music-img/no-love1.svg"></div>
+                    <div class="vol"><img class="vol-img" src="./music-img/vol1.png"></div>
+                    <div class="musicLi"><img src="./music-img/musicList.png"></div>
+                </div>
+                <div class="music-box">
+                    <audio class="music-element" src="" preload="auto">
+                    </audio>
+                    <span class="current-time">0:0</span>
+                    <input type="range" class="seekBar" step="1" value="0" min="0" max="100">
+                    <span class="duration">0:0</span>
+
+                </div>
+                <div class="music-btn">
+                    <span class="last"><img src="./music-img/last.png"></span>
+                    <span class="play"><img class="play-img" src="./music-img/play.png"></span>
+                    <span class="next"><img src="./music-img/next.png"></span>
+                </div>
+            </div>
+            <!-- 小窗模式 -->
+            <div class="music-little">
+                <div class="music-little-box">
+                    <img src="./music-img/music.png">
+                </div>
+            </div>
+
+            <!-- 笔记部分 -->
+            <div class="noteShell">
+                <div class="top">
+                    <div class="top_tips">
+                        <span>原子笔记</span>
+                    </div>
+                    <div class="top_btns">
+                        <button style="background-color: #2ed573;" title="扩大"></button>
+                        <button style="background-color: #eccc68;" title="缩小"></button>
+                        <button class="note-close" style="background-color: #ff4757;" title="关闭"></button>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="left">
+                        <div class="user">
+                            <div class="user_head">
+                                <div class="vip"></div>
+                            </div>
+                            <div class="new_project button">新建项目</div>
+                        </div>
+                        <div class="project_box">
+                            <div class="project_name">
+                                <li>新建笔记</li>
+                                <li>空白文档</li>
+                                <li>协同表格</li>
+                                <li>上传笔记</li>
+                            </div>
+                        </div>
+                        <div class="project-function">
+                            <li class="current">最近</li>
+                            <li>文件夹</li>
+                            <li>回收站</li>
+                            <li>云协作</li>
+                        </div>
+                        <div class="setting"></div>
+                    </div>
+                    <div class="note-main">
+                        <div class="file_show">
+                            <div class="search_box">
+                                <input class="note_input" placeholder="搜索笔记  Ctrl + Shift + F">
+                                <div class="searchLogo"></div>
+                            </div>
+                            <div class="file_show_box">
+                                <!-- <div class="note" draggable="true">
+                                <p class="note_name">无标题笔记</p>
+                                <p class="note_time">2022/10/11</p>
+                                <div class="encrypt"></div>
+                            </div> -->
+                                <!-- <div class="note">
+                            <p class="note_name">无标题笔记</p>
+                            <p class="note_time">2022/10/11</p>
+                        </div> -->
+                            </div>
+                            <div class="note_menu">
+                                <div class="note_menu_name">
+                                    <li>新建</li>
+                                    <li>删除</li>
+                                    <li class="lock">加密</li>
+                                    <li>置顶</li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file_content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="https://yijuzhan.com/api/word.php?m=js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/music.js"></script>
+<script type="text/javascript" src="js/note.js"></script>
+<script type="text/javascript" src="js/mod.js"></script>
+<!-- <script src="https://unpkg.com/spacingjs" defer></script> -->
+
+
+</html>

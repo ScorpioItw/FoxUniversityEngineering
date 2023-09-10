@@ -1,0 +1,643 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: G;
+    src: url(../font/G.ttf);
+}
+
+@font-face {
+    font-family: OS;
+    src: url(../font/OS.ttf);
+}
+
+:root {
+    --window-width: 0px;
+    --window-height: 0px;
+}
+
+.load {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    /* border-style: solid; */
+    background-color: #515151;
+    border-radius: 1em;
+    transition: all 1s ease;
+}
+
+.load_box {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+}
+
+
+.load_box img {
+    width: 100px;
+    height: 100px;
+    opacity: 100;
+    transition: all 0.5s ease;
+    border-radius: 20px;
+}
+
+.noteShell {
+    width: 850px;
+    height: 500px;
+    /* border-style: solid; */
+    background-color: #f1f2f6;
+    border-radius: 1em;
+    position: relative;
+    z-index: 3;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 3px 5px 2px #5d5d5d;
+    /* transition: all 1s ease; */
+    display: none;
+}
+
+.top {
+    position: relative;
+    width: inherit;
+    top: 5px;
+    height: 25px;
+    background: #f1f2f6;
+    border-radius: 1em 1em 0 0;
+    /* border-style: solid; */
+}
+
+.top_tips {
+    position: absolute;
+    width: 100px;
+    /* border-style: solid; */
+    /* line-height: 25px; */
+    height: inherit;
+    left: 25px;
+    font-family: 'G';
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
+.top_tips span {
+    line-height: 20px;
+    border-left: #0984e3 solid 4px;
+    padding-left: 10px;
+    color: #2f3542;
+}
+
+
+.top_btns {
+    position: absolute;
+    width: 50px;
+    height: inherit;
+    /* border-style: solid; */
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.top_btns button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: transparent;
+}
+
+.content {
+    position: relative;
+    width: inherit;
+    top: 10px;
+    height: 465px;
+    background: #fff;
+    border-radius: 1em;
+    /* overflow: hidden; */
+}
+
+.left {
+    position: absolute;
+    left: 20px;
+    width: 100px;
+    height: inherit;
+    background: rgb(223, 228, 234, 0.3);
+    background: #dfe4ea;
+    background: #c3c9da94;
+    backdrop-filter: blur(1px);
+    border-radius: 2px;
+    /* border-style: solid; */
+}
+
+.user {
+    /* border-style: solid; */
+    position: relative;
+    top: 10px;
+    width: inherit;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.user_head {
+    position: relative;
+    /* border-style: solid; */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: url('../note-img/head.png') center center no-repeat;
+    /* background-image: url(../img/head.gif), url(../img/head.png);
+    background-position: center center;
+    background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+.vip {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    /* border-style: solid; */
+    bottom: 0;
+    right: 0;
+    background: url('../note-img/vip.gif') center center no-repeat;
+    background-size: cover;
+}
+
+.new_project {
+    width: 70px;
+    height: 30px;
+    border-style: none;
+    /* border-style: solid; */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #0984e3;
+    font-size: small;
+    font-family: OS;
+    color: #fff;
+    user-select: none;
+}
+
+.project_box {
+    position: absolute;
+    width: 80PX;
+    height: 120PX;
+    left: 10px;
+
+    display: none;
+}
+
+.project_name {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(25px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.8em;
+    font-family: OS;
+    animation: project_name .5s ease;
+}
+
+@keyframes project_name {
+    from {
+        height: 0;
+        color: transparent;
+        opacity: 0;
+    }
+
+    to {
+        height: 120PX;
+        color: #000;
+        opacity: 1;
+    }
+}
+
+.project_name li {
+    transition: color .5s ease;
+    list-style: none;
+    user-select: none;
+    width: 55px;
+    /* border-style: solid; */
+}
+
+.project_name li:hover {
+    color: #00a8ff;
+    cursor: pointer;
+}
+
+.button {
+    transition: background 1s ease;
+}
+
+.button:hover {
+    background: #00a8ff;
+    cursor: pointer;
+}
+
+.project-function {
+    width: inherit;
+    height: 100px;
+    /* background: #000; */
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.9em;
+    font-family: OS;
+}
+
+.project-function li {
+    list-style: none;
+    user-select: none;
+    width: 55px;
+    text-align: center;
+    cursor: pointer;
+    transition: background .5s ease, color .5s ease;
+}
+
+.setting {
+    position: absolute;
+    left: 40px;
+    bottom: 20px;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    background: url('../note-img/s0.svg') center center no-repeat;
+    background-size: cover;
+    transition: transform .5s ease;
+}
+
+.setting:hover {
+    background: url('../note-img/s1.svg') center center no-repeat;
+    background-size: cover;
+    transform: rotate(90deg);
+}
+
+.current {
+    width: 50px;
+    border-left: solid #0984e3;
+    background: #f1f2f6;
+    border-radius: 0 3px 3px 0;
+    color: #3498db;
+}
+
+.note-main {
+    position: relative;
+    top: 0px;
+    left: 130px;
+    width: 720px;
+    height: inherit;
+    background: #fff;
+    border-radius: 0 1em 1em 0;
+    /* background: #000; */
+    /* border-style: solid; */
+}
+
+.file_show {
+    position: absolute;
+    width: 200px;
+    height: inherit;
+    /* background: #000; */
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-right: #f1f2f6 solid 3px;
+    background: #f9fafb;
+}
+
+.search_box {
+    width: inherit;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.search_box input {
+    width: 150px;
+    height: 20px;
+    border-radius: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    /* background: #f4f6f7; */
+    background: #f2f2f7;
+    border: none;
+    font-size: 10px !important;
+    font-family: OS;
+    outline: none;
+}
+
+.note_input:focus {
+    border: #90b3f4 solid 1px;
+}
+
+.search_box input::placeholder {
+    font-size: 10px;
+    padding-left: 10px;
+    user-select: none;
+}
+
+.searchLogo {
+    width: 20px;
+    height: 20px;
+    /* border-style: solid; */
+    background: url('../note-img/sou.svg') center center no-repeat;
+    background-size: cover;
+}
+
+.file_show_box {
+    width: inherit;
+    height: 420px;
+    /* border-style: solid; */
+    background: #f9fafb;
+    overflow-y: auto;
+}
+
+.file_show_box::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 4px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 2px;
+}
+
+.file_show_box::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 50px;
+    background-color: #0984e3;
+    /* background-color: #FE6060; */
+    background-image: -webkit-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.2) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.2) 75%,
+            transparent 75%,
+            transparent);
+}
+
+.file_show_box::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #ededed;
+    border-radius: 10px;
+}
+
+.file_show_box_no {
+    /* 嵌套盒子 */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new_file {
+    width: 70px;
+    height: 30px;
+    font-size: small;
+    font-family: OS;
+    color: #fff;
+    user-select: none;
+    width: 70px;
+    height: 30px;
+    border-style: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #0984e3;
+}
+
+.file_content_no {
+    /* 没有文件的情况 */
+    /* border-style: solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    width: 490px;
+    height: 420px;
+}
+
+.file_content {
+    /* border-style: solid; */
+    position: absolute;
+    /* top: 25px; */
+    left: 210px;
+    width: 490px;
+    height: inherit;
+}
+
+.no_content {
+    width: 100px;
+    height: 100px;
+    background: url('../note-img/note5.svg') center center no-repeat;
+    background-size: cover;
+}
+
+.note {
+    /* 盒子长度200 */
+    width: 190px;
+    height: 60px;
+    background: pink;
+    border-radius: 8px;
+    font-family: OS;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.encrypt {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 12px;
+    right: 12px;
+    background: url('../note-img/s.svg') center center no-repeat;
+    background-size: cover;
+    animation: encrypt .3s ease-in-out;
+}
+
+@keyframes encrypt {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+}
+
+.note p:nth-child(1) {
+    /* border-style: solid; */
+    font-size: medium;
+    padding-left: 1em;
+    pointer-events: none;
+}
+
+.note p:nth-child(2) {
+    font-size: 10px;
+    align-self: flex-end;
+    padding-right: 5px;
+    pointer-events: none;
+
+}
+
+.note_menu {
+    position: absolute;
+    z-index: 2;
+    display: none;
+
+
+}
+
+@keyframes note_menu {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.note_menu_name {
+    width: 80px;
+    height: 120px;
+    border-radius: 10px;
+    background: rgba(231, 235, 246, 0.8);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: OS;
+    font-size: 0.85em;
+    font-weight: 100;
+    animation: note_menu .3s ease;
+}
+
+.note_menu li {
+    position: relative;
+    list-style: none;
+    color: #000;
+    cursor: pointer;
+    transition: color .5s ease;
+    user-select: none;
+    padding-left: 8px;
+}
+
+.note_menu li:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 12%;
+    left: -25%;
+    background: url('../note-img/add.svg') center center no-repeat;
+    background-size: cover;
+}
+
+.note_menu li:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 12%;
+    left: -25%;
+    background: url('../note-img/del.svg') center center no-repeat;
+    background-size: cover;
+}
+
+.lock::before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 14px;
+    top: 12%;
+    left: -25%;
+    background: url('../note-img/lock.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.unlock::before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 14px;
+    top: 12%;
+    left: -25%;
+    background: url('../note-img/unlock.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.note_menu li:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 12%;
+    left: -25%;
+    background: url('../note-img/置顶.svg') center center no-repeat;
+    background-size: cover;
+}
+
+.note_menu li:nth-child(1):hover {
+    color: #00a8ff;
+}
+
+.note_menu li:nth-child(2):hover {
+    color: #ff4757;
+}
+
+.note_menu li:nth-child(3):hover {
+    color: #ffa502;
+}
+
+.note_menu li:nth-child(4):hover {
+    color: #2ed573;
+}
+
+.moving {
+    background: transparent !important;
+    color: transparent !important;
+    border: 1px dashed #ccc !important;
+}
+
+/* 给移动状态下加密锁隐藏 */
+.moving>.encrypt {
+    /* 子代选择器 */
+    display: none;
+}
